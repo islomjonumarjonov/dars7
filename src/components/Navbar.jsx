@@ -4,7 +4,6 @@ import { useContext } from "react";
 
 function Navbar() {
   const { likedImages } = useContext(GlobalContext);
-  console.log(likedImages.length);
   return (
     <div className="navbar container">
       <h3 className="logo">Unsplash</h3>
