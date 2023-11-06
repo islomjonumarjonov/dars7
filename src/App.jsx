@@ -7,8 +7,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import ErrorPage from "./ErrorPage";
 import SingleImage from "./pages/SingleImage";
-import Liked from "./pages/Liked";
-
+import LikedImages from "./pages/LikedImages";
 function App() {
   const roots = createBrowserRouter([
     {
@@ -34,7 +33,7 @@ function App() {
         },
         {
           path: "likedImages",
-          element: <Liked />,
+          element: <LikedImages />,
         },
       ],
     },
