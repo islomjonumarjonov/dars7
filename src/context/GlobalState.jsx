@@ -7,6 +7,7 @@ function dataFromLocalStorage() {
     JSON.parse(localStorage.getItem("unsplashData")) || {
       mode: "light",
       likedImages: [],
+      user: null,
     }
   );
 }
@@ -15,6 +16,10 @@ const changeState = (state, action) => {
   switch (action.type) {
     case "ADD_LIKED_IMAGE":
       return { ...state, likedImages: [...state.likedImages, action.payload] };
+    case "CHANGE_MODE":
+      return { ...state, mode: action.payload };
+    case "ADD_USER":
+      return { ...state, user: action.payload };
     default:
       return state;
   }
@@ -33,13 +38,27 @@ export function GlobalContextProvider({ children }) {
     }
   };
 
+  const changeMode = (mode) => {
+    dispatch({ type: "CHANGE_MODE", payload: mode });
+  };
+
+  const addUser = (user) => {
+    dispatch({ type: "ADD_USER", payload: user });
+  };
+
   useEffect(() => {
     localStorage.setItem("unsplashData", JSON.stringify(state));
   }, [state]);
 
-  console.log(state);
+  useEffect(() => {
+    if (state.mode === "dark") document.body.classList.add("dark-mode");
+    else document.body.classList.remove("dark-mode");
+  }, [state.mode]);
+
   return (
-    <GlobalContext.Provider value={{ ...state, addNewImage }}>
+    <GlobalContext.Provider
+      value={{ ...state, addNewImage, changeMode, addUser }}
+    >
       {children}
     </GlobalContext.Provider>
   );

@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import ErrorPage from "./ErrorPage";
 import SingleImage from "./pages/SingleImage";
 import LikedImages from "./pages/LikedImages";
+import Login from "./pages/Login";
 function App() {
   const roots = createBrowserRouter([
     {
@@ -28,12 +29,16 @@ function App() {
           element: <Home />,
         },
         {
+          path: "likedImages",
+          element: <LikedImages />,
+        },
+        {
           path: "singlepage/:id",
           element: <SingleImage />,
         },
         {
-          path: "likedImages",
-          element: <LikedImages />,
+          path: "login",
+          element: <Login />,
         },
       ],
     },

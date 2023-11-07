@@ -1,12 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 
-import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalState";
-
 function SingleImage() {
-  const data = useContext(GlobalContext);
-  // console.log(data);
   const { id } = useParams();
   const url = `https://api.unsplash.com/photos/${id}?client_id=${
     import.meta.env.VITE_APP_ACCESS_KEY

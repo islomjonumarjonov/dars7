@@ -1,9 +1,27 @@
 @import url(https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;800;900&display=swap);
 
+:root {
+  --bg-color: #fff;
+  --text-color: #111;
+  --link-colors: #333;
+}
+
+.dark-mode {
+  --bg-color: #333;
+  --text-color: #fff;
+  --link-colors: #fff;
+}
+
+* {
+  transition: 0.12s;
+}
+
 body {
   font-family: "Lato", sans-serif;
   margin: 0;
   padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 ul,
@@ -28,6 +46,7 @@ ol {
 
 .navbar nav {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 
@@ -35,7 +54,7 @@ ol {
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
-  color: #333;
+  color: var(--link-colors);
 }
 
 .navbar a:hover {
@@ -46,6 +65,31 @@ ol {
   font-size: 30px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login h1 {
+  font-size: 50px;
+}
+
+.user-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-image {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
 }
 
 .error-page {
@@ -76,6 +120,28 @@ form button {
   padding: 5px 10px;
   cursor: pointer;
   font-size: 15px;
+}
+
+.button {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 8px 10px;
+  font-size: 16px;
+  border: 2px solid var(--link-colors);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 30px;
+}
+
+.modeBtn {
+  display: flex;
+  align-items: center;
 }
 
 .galerey {

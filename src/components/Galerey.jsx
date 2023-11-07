@@ -20,6 +20,7 @@ function Galerey({ data: { results } }) {
               />
             </Link>
             <button
+              className="button"
               onClick={() => {
                 addNewImage(image);
               }}

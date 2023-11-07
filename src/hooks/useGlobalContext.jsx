@@ -9,5 +9,5 @@ export function useGlobalContext() {
       "useGlobalContext must be wrapped by GlobalContextProvider("
     );
   }
-  return <div>useGlobalContext</div>;
+  return context;
 }
